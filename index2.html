@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmicaesthetix - AI-Powered Branding & Marketing Assets</title>
+    <style>
+        :root {
+            --color-mocha: #4B3935;
+            --color-cream: #F0E7D5;
+            --color-text: #2a2a2a;
+            --color-light-text: #666666;
+            --color-border: rgba(75, 57, 53, 0.1);
+            --color-hover: #5c4945;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--color-mocha);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--color-mocha);
+            text-align: center;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--color-mocha);
+        }
+
+        p {
+            font-size: 1.05rem;
+            color: var(--color-light-text);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--color-mocha);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(75, 57, 53, 0.15);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--color-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(75, 57, 53, 0.25);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn--secondary {
+            background-color: transparent;
+            color: var(--color-mocha);
+            border: 2px solid var(--color-mocha);
+            padding: 12px 30px;
+            box-shadow: none;
+        }
+
+        .btn--secondary:hover {
+            background-color: rgba(75, 57, 53, 0.05);
+            box-shadow: 0 4px 12px rgba(75, 57, 53, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-cream) 0%, rgba(75, 57, 53, 0.03) 100%);
+            padding: 120px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(75, 57, 53, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(75, 57, 53, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -80px;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subheadline {
+            font-size: 1.3rem;
+            color: var(--color-light-text);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .btn {
+            margin-top: 1rem;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background-color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .how-it-works h2 {
+            margin-bottom: 4rem;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            padding: 2rem;
+            background: var(--color-cream);
+            border-radius: 12px;
+            position: relative;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--color-border);
+        }
+
+        .step:hover {
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-mocha);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: var(--color-light-text);
+        }
+
+        /* Services Section */
+        .services {
+            background: linear-gradient(180deg, var(--color-cream) 0%, rgba(75, 57, 53, 0.02) 100%);
+            padding: 100px 20px;
+        }
+
+        .services h2 {
+            margin-bottom: 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(75, 57, 53, 0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(75, 57, 53, 0.15);
+            border-color: var(--color-mocha);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(75, 57, 53, 0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.35rem;
+        }
+
+        .service-card p {
+            flex-grow: 1;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .service-card .btn {
+            align-self: flex-start;
+            font-size: 0.95rem;
+            padding: 12px 24px;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .why-choose h2 {
+            margin-bottom: 3rem;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .benefit-item {
+            padding: 1.5rem;
+            background: var(--color-cream);
+            border-radius: 10px;
+            border-left: 4px solid var(--color-mocha);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(4px);
+        }
+
+        .benefit-item::before {
+            content: '✓';
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background-color: var(--color-mocha);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            margin-right: 1rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .benefit-text {
+            flex: 1;
+        }
+
+        .benefit-item h4 {
+            font-weight: 600;
+            color: var(--color-mocha);
+            margin-bottom: 0.3rem;
+        }
+
+        .benefit-item p {
+            font-size: 0.9rem;
+            color: var(--color-light-text);
+            margin: 0;
+        }
+
+        /* Soft CTA Section */
+        .soft-cta {
+            background: linear-gradient(135deg, rgba(75, 57, 53, 0.06) 0%, rgba(75, 57, 53, 0.03) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .soft-cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+            color: var(--color-text);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-mocha);
+            color: white;
+            padding: 4rem 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer .brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        footer .tagline {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        footer .disclaimer {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            .hero {
+                padding: 80px 20px;
+                min-height: auto;
+            }
+
+            .hero-subheadline {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .steps-container {
+                gap: 1.5rem;
+            }
+
+            .services-grid {
+                gap: 1.5rem;
+            }
+
+            .benefits-list {
+                gap: 1.2rem;
+            }
+
+            .soft-cta p {
+                font-size: 1rem;
+            }
+
+            footer .brand {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Smooth scroll animations */
+        .section-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Accessibility */
+        .btn:focus,
+        a:focus {
+            outline: 2px solid var(--color-mocha);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Build Your Brand Faster With AI-Powered Design</h1>
+            <p class="hero-subheadline">
+                Logos, social media content, ads, and visuals created by professionals — without learning design tools or AI software.
+            </p>
+            <a href="#services" class="btn">Explore Services</a>
+            <p style="font-size: 0.9rem; color: var(--color-light-text); margin-top: 1.5rem; opacity: 0.85;">
+                Trusted by creators & small businesses worldwide
+            </p>
+</parameter>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Choose Your Asset</h3>
+                <p>Select the branding or marketing asset you need for your business.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Create It</h3>
+                <p>A professional uses AI and expertise to create your custom visuals.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Ready to Use</h3>
+                <p>Receive polished, ready-to-use visuals for your business.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>AI Logo Design & Brand Kits</h3>
+                <p>Professional logos and brand identities created with AI-assisted design — perfect for new or rebranding businesses.</p>
+                <a href="https://go.fiverr.com/visit/?bta=989364&brand=fp&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsearch%252Fgigs%253Fquery%253DAI%252520Logo%252520Design%252520%252526%252520Brand%252520Kits%2526source%253Dmain_banner%2526ref_ctx_id%253D5de9d2b717254010853d8a123d6c6291%2526search_in%253Deverywhere%2526search-autocomplete-original-term%253Dai%252520logo%252520design%252520%252520brand%252520kits" class="btn" target="_blank">View Logo Services</a>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Social Media Graphics & Posts</h3>
+                <p>Scroll-stopping visuals for Instagram, Pinterest, and Facebook — designed for growth and consistency.</p>
+                <a href="https://go.fiverr.com/visit/?bta=989364&brand=fp&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsearch%252Fgigs%253Fquery%253DSocial%252520Media%252520Graphics%252520%252526%252520Posts%2526source%253Dtop-bar%2526ref_ctx_id%253D1f6f30ca1ab34a83a050296f5fb48ce2%2526search_in%253Deverywhere%2526search-autocomplete-original-term%253Dsocial%252520media%252520graphics%252520%252520posts" class="btn" target="_blank" ">Browse Social Media Designs</a>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-icon">🎬</div>
+                <h3>AI Video Ads & Promo Videos</h3>
+                <p>Short, high-converting promo videos and ads created for modern digital platforms.</p>
+                <a href="https://go.fiverr.com/visit/?bta=989364&brand=fp&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsearch%252Fgigs%253Fquery%253DAI%252520Video%252520Ads%252520%252526%252520Promo%252520Videos%2526source%253Dtop-bar%2526ref_ctx_id%253Dff488f9449d041b387da959f425cc565%2526search_in%253Deverywhere%2526search-autocomplete-original-term%253Dai%252520video%252520ads%252520%252520promo%252520videos" class="btn" target="_blank">See Video Ad Services</a>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-icon">⭐</div>
+                <h3>Creator Assets (Thumbnails & Covers)</h3>
+                <p>YouTube thumbnails, Pinterest pins, and cover graphics designed to boost clicks and engagement.</p>
+                <a href="https://go.fiverr.com/visit/?bta=989364&brand=fp&landingPage=https%253A%252F%252Fwww.fiverr.com%252Fsearch%252Fgigs%253Fquery%253DCreator%252520Assets%252520(Thumbnails%252520%252526%252520Covers)%2526source%253Dtop-bar%2526ref_ctx_id%253D9e884b048f9d47109d27ba7036088a48%2526search_in%253Deverywhere%2526search-autocomplete-original-term%253Dcreator%252520assets%252520thumbnails%252520%252520covers" class="btn" target="_blank">Explore Creator Assets</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose">
+        <h2>Why Choose This Approach</h2>
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <div class="benefit-text">
+                    <h4>No AI Tools to Learn</h4>
+                    <p>We handle the complexity so you don't have to.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-text">
+                    <h4>Faster Than DIY Design</h4>
+                    <p>Get professional results in days, not weeks.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-text">
+                    <h4>Created by Real Professionals</h4>
+                    <p>Expert designers behind every project.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-text">
+                    <h4>Perfect for Small Businesses</h4>
+                    <p>Built specifically for entrepreneurs and creators.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-text">
+                    <h4>High-Quality Assets</h4>
+                    <p>Ready-to-use, professional-grade visuals.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-text">
+                    <h4>No Stress, No Hassle</h4>
+                    <p>Stress-free process from start to finish.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soft CTA Section -->
+    <section class="soft-cta">
+        <p>
+            If you're building a brand or growing a business, the right visuals make all the difference.
+        </p>
+        <a href="#" class="btn">Start With a Professional</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="brand">CosmicAesthetix</div>
+            <p class="tagline">Curated AI-powered design services for modern businesses.</p>
+            <p class="disclaimer">Some links on this site may be affiliate links.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
